@@ -9,4 +9,4 @@
 -
     title: Catégorie secondaire
     slug: category3
-    category: category2
+    parent_category_slug: category2

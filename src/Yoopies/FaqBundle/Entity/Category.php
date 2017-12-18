@@ -7,13 +7,13 @@ use Doctrine\Common\Collections\ArrayCollection;
 class Category
 {
     private $title;
-    private $categories;
+    private $subCategories;
     private $articles;
 
     public function __construct($title)
     {
         $this->title = $title;
-        $this->categories = new ArrayCollection();
+        $this->subCategories = new ArrayCollection();
         $this->articles = new ArrayCollection();
     }
 
@@ -33,9 +33,9 @@ class Category
         $this->title = $title;
     }
 
-    public function addCategory(self $category)
+    public function addSubCategory(self $subCategory)
     {
-        $this->categories->add($category);
+        $this->subCategories->add($subCategory);
     }
 
     public function addArticle(Article $article)
@@ -46,17 +46,17 @@ class Category
     /**
      * @return ArrayCollection
      */
-    public function getCategories()
+    public function getSubCategories()
     {
-        return $this->categories;
+        return $this->subCategories;
     }
 
     /**
-     * @param ArrayCollection $categories
+     * @param ArrayCollection $subCategories
      */
-    public function setCategories($categories)
+    public function setSubCategories($subCategories)
     {
-        $this->categories = $categories;
+        $this->subCategories = $subCategories;
     }
 
     /**
